@@ -13,15 +13,15 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 const Links = [
   {
-    path: 'analogies',
+    path: '/analogies',
     title: 'FHIR Analogies'
   },
   {
-    path: 'learn',
+    path: '/learn',
     title: 'Learn FHIR'
   },
   {
-    path: 'glossary',
+    path: '/glossary',
     title: 'Glossary',
   },
 ];
