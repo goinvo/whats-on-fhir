@@ -9,6 +9,14 @@ export default function Layout({ children }) {
 
   return (
     <div>
+      <style>
+        {/* TODO: Placeholder, quick styles for library comp since inline style object is overwritten by the comp */}
+        {`
+          .chakra-popover__popper {
+            display: inline;
+          }
+        `}
+      </style>
       <Navigation />
       <div style={{...contentStyles}}>
         {children}

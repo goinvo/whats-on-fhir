@@ -12,7 +12,7 @@ const GlossaryPage = () => {
       {
         glossary.map(word => {
           return (
-            <p key={word.id}>
+            <p key={word.id} id={word.id}>
               <b>{word.title}:</b> {word.description}
             </p>
           )

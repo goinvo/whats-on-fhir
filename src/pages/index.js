@@ -1,9 +1,11 @@
 import * as React from "react"
+import JsxParser from 'react-jsx-parser'
 import {
   Heading
 } from '@chakra-ui/react'
 
 import Layout from '../components/layout.js'
+import GlossaryItem from '../components/glossary-item.js'
 
 // styles
 const pageStyles = {
@@ -47,7 +49,7 @@ const prompts = [
     title: "flexible.",
     description: "Designed to work with nearly any health data system across the world, FHIR is highly flexible, extensible, and customizable. Purposefully built this way in order to minimize the barrier to entry for organizations; the organization's system can pick and choose what <Glossary>use cases</Glossary> they want to support. They can also build their own use cases, either building off an existing one as a starting point, or entirely from scratch.",
     conjunction: "but is",
-    conTitle: "almost too flexible",
+    conTitle: "almost too flexible.",
     conDescription: "Being this flexible can come with some downsides. Primarily, because it's up to organizations to pick and choose what they support, FHIR doesn't ensure or enforce broad interoperability across systems, only if those organizations choose to support the same things. It can also make concepts hard to learn for newcomers. Which leads us to..."
   },
   {
@@ -58,7 +60,7 @@ const prompts = [
   {
     verb: "is",
     title: "constantly evolving.",
-    description: "<Glossary id='use-case'>Use cases</Glossary> are being developed and refined at a regular rhythm. Some tools associated with FHIR, like the <Tool>IG Publisher</Tool>, can be updated multiple times a day. Other components of the system like Implementation Guides, while still being consistently added and adjusted, can take years to reach maturity or practical use. Meaning..."
+    description: "<GlossaryItem id='use-case'>Use cases</GlossaryItem> are being developed and refined at a regular rhythm. Some tools associated with FHIR, like the <Tool>IG Publisher</Tool>, can be updated multiple times a day. Other components of the system like Implementation Guides, while still being consistently added and adjusted, can take years to reach maturity or practical use. Meaning..."
   },
   {
     verb: "is",
@@ -110,14 +112,25 @@ const IndexPage = () => {
               <Heading as='h4' size='sm' style={headingStyles}>FHIR {prompt.verb}...</Heading>
               <Heading as='h2' size='lg' style={headingStyles}>{prompt.title}</Heading>
               <hr style={hrStyles} />
-              <p style={descriptionStyle}>{prompt.description}</p>
+              <p style={descriptionStyle}>
+                <JsxParser
+                  components={{ GlossaryItem }}
+                  jsx={prompt.description}>
+                </JsxParser>
+              </p>
               {
                 prompt.conjunction ?
                   <div style={{marginTop: '2rem'}}>
                     <Heading as='h4' size='sm' style={headingStyles}>{prompt.conjunction}...</Heading>
                     <Heading as='h2' size='lg' style={headingStyles}>{prompt.conTitle}</Heading>
                     <hr style={hrStyles} />
-                    <p style={descriptionStyle}>{prompt.conDescription}</p>
+                    
+                    <p style={descriptionStyle}>
+                    <JsxParser
+                      components={{ GlossaryItem }}
+                      jsx={prompt.conDescription}>
+                    </JsxParser>
+                    </p>
                   </div>
                 : null
               }

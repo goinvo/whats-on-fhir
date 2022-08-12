@@ -2,16 +2,9 @@ import React, { ReactNode } from 'react';
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
   Link,
   IconButton,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
@@ -24,13 +17,13 @@ const Links = [
     title: 'FHIR Analogies'
   },
   {
+    path: 'learn',
+    title: 'Learn FHIR'
+  },
+  {
     path: 'glossary',
     title: 'Glossary',
   },
-  {
-    path: 'learn',
-    title: 'Learn FHIR'
-  }
 ];
 
 const NavLink = ({children} = { children: ReactNode }) => (
