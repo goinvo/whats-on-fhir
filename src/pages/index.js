@@ -1,7 +1,8 @@
 import * as React from "react"
 import JsxParser from 'react-jsx-parser'
 import {
-  Heading
+  Heading,
+  Link
 } from '@chakra-ui/react'
 
 import Layout from '../components/layout.js'
@@ -38,7 +39,7 @@ const prompts = [
   {
     verb: "is",
     title: "a framework.",
-    description: "A very high level, or abstracted framework, that is. Some may call it a platform. FHIR provides very generalized building blocks to represent heath data in a variety of settings and applications. It provides avenues for these building blocks to be configured and customized to meet specific needs. On top of that, it provides guidance on how these building blocks should be communicated back and forth between systems across the internet. To understand this better, see the 'FHIR analogies' page. The abstract or 'meta' nature of FHIR means..."
+    description: "A very high level, or abstracted framework, that is. Some may call it a platform. FHIR provides very generalized building blocks to represent heath data in a variety of settings and applications. It provides avenues for these building blocks to be configured and customized to meet specific needs. On top of that, it provides guidance on how these building blocks should be communicated back and forth between systems across the internet. To understand this better, see the <Link href='/analogies' style={{color: 'blue'}}>FHIR analogies</Link> page. The abstract or 'meta' nature of FHIR means..."
   },
   {
     verb: "is",
@@ -115,7 +116,7 @@ const IndexPage = () => {
               <hr style={hrStyles} />
               <p style={descriptionStyle}>
                 <JsxParser
-                  components={{ GlossaryItem }}
+                  components={{ GlossaryItem, Link }}
                   jsx={prompt.description}>
                 </JsxParser>
               </p>
