@@ -14,16 +14,24 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 const Links = [
   {
     path: '/analogies',
-    title: 'FHIR Analogies'
+    title: 'The Piano Analogy'
   },
   {
-    path: '/learn',
-    title: 'Learn FHIR'
+    link: 'https://github.com/goinvo/whats-on-fhir',
+    title: 'GitHub'
   },
   {
-    path: '/glossary',
-    title: 'Glossary',
+    link: 'mailto:whatsonFHIR@goinvo.com',
+    title: 'Feedback'
   },
+  // {
+  //   path: '/learn',
+  //   title: 'Learn FHIR'
+  // },
+  // {
+  //   path: '/glossary',
+  //   title: 'Glossary',
+  // },
 ];
 
 const NavLink = ({children} = { children: ReactNode }) => (
@@ -35,7 +43,8 @@ const NavLink = ({children} = { children: ReactNode }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={children.path}>
+    href={children.link ? children.link : children.path}
+    isExternal={ children.link ? true : false }>
     {children.title}
   </Link>
 );

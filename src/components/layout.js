@@ -44,9 +44,7 @@ export default function Layout({ children }) {
       <div style={{...footerStyles}}>
           <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
             <Flex h={16} alignItems={'center'} justifyContent={'flex-end'} w='100%'>
-              <Link href="mailto:whatsonfhir@goinvo.com" isExternal>whatsonFHIR@goinvo.com</Link>
-              <div style={{ margin: '0 1rem' }}>|</div>
-              <Link href="https://github.com/goinvo/whats-on-fhir" isExternal>GitHub</Link>
+              <Link href="https://goinvo.com" isExternal>by GoInvo</Link>
             </Flex>
           </Box>
         </div>
