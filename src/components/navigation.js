@@ -14,7 +14,7 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 const Links = [
   {
     path: '/analogies',
-    title: 'The Piano Analogy'
+    title: 'The FHIR Orchestra'
   },
   {
     link: 'https://github.com/goinvo/whats-on-fhir',
